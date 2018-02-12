@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from wger.settings_global import *
+import os
 
 # Use 'DEBUG = True' to get more details for server errors
 DEBUG = True
@@ -15,12 +16,12 @@ MANAGERS = ADMINS
 
 DATABASES = {{
     'default': {{
-        'ENGINE': 'django.db.backends.{dbengine}',
-        'NAME': {dbname},
-        'USER': '{dbuser}',
-        'PASSWORD': '{dbpassword}',
-        'HOST': '{dbhost}',
-        'PORT': '{dbport}',
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.{dbengine}'),
+        'NAME': os.environ.get('DB_NAME', {dbname}),
+        'USER': os.environ.get('DB_USER', '{dbuser}'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', '{dbpassword}'),
+        'HOST': os.environ.get('DB_HOST', '{dbhost}'),
+        'PORT': os.environ.get('DB_PORT', '{dbport}'),
     }}
 }}
 
@@ -45,8 +46,7 @@ MEDIA_URL = '/media/'
 # Allow all hosts to access the application. Change if used in production.
 ALLOWED_HOSTS = '*'
 
-# This might be a good idea if you setup memcached
-#SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# This might be a good idea if you setup memcached #SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 # Configure a real backend in production
 if DEBUG:

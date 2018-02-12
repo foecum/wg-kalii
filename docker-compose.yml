@@ -12,6 +12,7 @@ services:
       - DB_USER=postgres
       - DB_HOST=wger_db
       - DB_PORT=5432
+      - DB_NAME=postgres
     networks:
       - wger_network
     depends_on:

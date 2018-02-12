@@ -13,12 +13,10 @@ RUN apt-get -y update && \
 RUN pip install -r requirements.txt
 
 RUN invoke create-settings \
-         --settings-path ~/.config/wger/settings.py \
-         --database-path ~/.config/wger/database.sqlite && \
- invoke bootstrap-wger \
-         --settings-path ~/.config/wger/settings.py \
-         --no-start-server
+         --settings-path ~/.config/wger/settings.py
 
-RUN python3 manage.py migrate
+ENTRYPOINT invoke bootstrap-wger \
+         --settings-path ~/.config/wger/settings.py \
+         --no-start-server && \
+         invoke start-wger --address 0.0.0.0 --port 8000
 
-ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]

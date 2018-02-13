@@ -12,9 +12,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
-import os
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -95,7 +92,6 @@ pygments_style = 'sphinx'
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
-
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -181,26 +177,25 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'wgerWorkoutManagerdoc'
 
-
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    #'papersize': 'letterpaper',
 
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    #'pointsize': '10pt',
 
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    #'preamble': '',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'wgerWorkoutManager.tex', u'wger Workout Manager Documentation',
-   u'Roland Geider', 'manual'),
+    ('index', 'wgerWorkoutManager.tex', u'wger Workout Manager Documentation',
+     u'Roland Geider', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -223,19 +218,15 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'wgerworkoutmanager', u'wger Workout Manager Documentation',
-     [u'Roland Geider'], 1)
-]
+man_pages = [('index', 'wgerworkoutmanager',
+              u'wger Workout Manager Documentation', [u'Roland Geider'], 1)]
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
-
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -243,9 +234,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'wgerWorkoutManager', u'wger Workout Manager Documentation',
-   u'Roland Geider', 'wgerWorkoutManager', 'One line description of project.',
-   'Miscellaneous'),
+    ('index', 'wgerWorkoutManager', u'wger Workout Manager Documentation',
+     u'Roland Geider', 'wgerWorkoutManager',
+     'One line description of project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
